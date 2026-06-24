@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
 
-# -------- Database Connection --------
+#  Database Connection 
 con = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -44,7 +44,7 @@ if not cur.fetchone():
     cur.execute("INSERT INTO users(username,password) VALUES(%s,%s)", ("admin", "admin123"))
     con.commit()
 
-# -------- Main Window --------
+#  Main Window 
 root = Tk()
 root.title("Login System with Student Details")
 root.geometry("950x650")
@@ -61,7 +61,7 @@ for f in (login_frame, register_frame, student_frame, admin_frame):
 def show_frame(frame):
     frame.tkraise()
 
-# -------- Add Background Images --------
+#  Add Background Images 
 # Replace these image files with your own images
 login_img = Image.open(r"D:\Zcoding\login_bg.jpg").resize((950,650))
 login_bg = ImageTk.PhotoImage(login_img)
@@ -79,7 +79,7 @@ admin_img = Image.open(r"D:\Zcoding\admin_bg.jpg").resize((950,650))
 admin_bg = ImageTk.PhotoImage(admin_img)
 Label(admin_frame, image=admin_bg).place(x=0,y=0)
 
-# -------- Functions --------
+#  Functions 
 def login_user():
     u = user_entry.get()
     p = pass_entry.get()

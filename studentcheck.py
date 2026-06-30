@@ -189,7 +189,7 @@ def edit_student():
     messagebox.showinfo("Updated","Student Updated Successfully")
     load_students_admin()
 
-# -------- Login Frame --------
+#  Login Frame 
 Label(login_frame, text="Login Page", font=("Arial",18,"bold"), bg="pink").place(x=400,y=30)
 Label(login_frame, text="Username:", bg="pink").place(x=320,y=120)
 user_entry = Entry(login_frame, width=25)
@@ -200,7 +200,7 @@ pass_entry.place(x=440,y=170)
 Button(login_frame, text="Login", command=login_user, bg="lightblue").place(x=370,y=220)
 Button(login_frame, text="Register", command=lambda:show_frame(register_frame), bg="orange").place(x=470,y=220)
 
-# -------- Register Frame --------
+#  Register Frame 
 Label(register_frame, text="Register Page", font=("Arial",18,"bold"), bg="pink").place(x=400,y=30)
 Label(register_frame, text="New Username:", bg="pink").place(x=320,y=120)
 reg_user = Entry(register_frame, width=25)
@@ -211,7 +211,7 @@ reg_pass.place(x=460,y=170)
 Button(register_frame, text="Register", command=register_user, bg="green").place(x=380,y=220)
 Button(register_frame, text="Back", command=lambda:show_frame(login_frame), bg="red").place(x=480,y=220)
 
-# -------- Student Frame --------
+#  Student Frame 
 Label(student_frame, text="Student Details", font=("Arial",18,"bold"), bg="pink").place(x=370,y=20)
 
 labels = ["Name","Course","Age","Contact No","Email","DOB","Gender","10th Mark","12th Mark","Attendance %"]
@@ -231,7 +231,7 @@ Button(student_frame, text="Save", command=save_student, bg="purple", fg="white"
 Button(student_frame, text="View", command=view_students, bg="brown", fg="white").place(x=300,y=550)
 Button(student_frame, text="Logout", command=lambda:show_frame(login_frame), bg="red").place(x=400,y=550)
 
-# -------- Admin Frame --------
+#  Admin Frame 
 Label(admin_frame, text="Admin Panel", font=("Arial",18,"bold"), bg="pink").place(x=380,y=20)
 
 admin_list_frame = Frame(admin_frame, bg="pink", width=850, height=200)
@@ -255,7 +255,7 @@ for f in fields:
 Button(admin_frame, text="Update", command=edit_student, bg="blue", fg="white").place(x=400,y=620)
 Button(admin_frame, text="Logout", command=lambda:show_frame(login_frame), bg="red").place(x=500,y=620)
 
-# -------- Show Login First --------
+# Show Login First 
 show_frame(login_frame)
 root.mainloop()
 
